@@ -299,22 +299,24 @@
 
 @media (max-width: 900px) {
   .hero {
-    padding: 80px 32px 24px;
+    padding: 80px 24px 24px;
     min-height: auto;
     justify-content: flex-start;
+    align-items: flex-start;
   }
 
   .hero__inner {
     grid-template-columns: 1fr;
     gap: 28px;
-    justify-items: center;   /* centers both columns */
+    justify-items: start;
+    margin: 0;
+    max-width: 100%;
   }
 
-  /* Photo on top */
   .hero__visual {
     order: -1;
     width: 100%;
-    justify-content: center;
+    justify-content: flex-start;
   }
 
   .hero__photo-frame {
@@ -323,40 +325,42 @@
     border-radius: 20px;
   }
 
-  /* Hide stat cards */
-  .hero__stat-card { display: none; }
+  .hero__stat-card {
+    display: none;
+  }
 
-  /* Center all text */
   .hero__content {
-    align-items: center;
-    text-align: center;
+    align-items: flex-start;
+    text-align: left;
     width: 100%;
   }
 
-  .hero__greeting { justify-content: center; }
-  .hero__roles    { justify-content: center; }
-  .hero__actions  { justify-content: center; }
-  .hero__socials  { justify-content: center; }
+  .hero__greeting,
+  .hero__roles,
+  .hero__actions,
+  .hero__socials {
+    justify-content: flex-start;
+  }
 
   .hero__bio {
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
+    text-align: left;
+    margin-left: 0;
+    margin-right: 0;
     max-width: 600px;
   }
 
-  .hero__blob--1 { width: 380px; height: 380px; right: -60px; }
-  .hero__blob--2 { width: 340px; height: 340px; left: -60px; }
-  .hero__inner {
-  justify-items: center;
-}
+  .hero__blob--1 {
+    width: 380px;
+    height: 380px;
+    right: -60px;
+  }
 
-.hero__content {
-  align-items: center;
-  text-align: center;
+  .hero__blob--2 {
+    width: 340px;
+    height: 340px;
+    left: -60px;
+  }
 }
-}
-
 /* ─── Mobile (≤640px) ────────────────────────────────────────────────────── */
 
 @media (max-width: 640px) {
