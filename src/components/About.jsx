@@ -47,31 +47,13 @@ export default function About() {
             </p>
             <p>
               Outside of lecture halls, I serve as President of <strong>Arbalest Rocketry</strong>,
-              where I lead a team designing <em>Red Robin</em> This is our biggest project yet where we are
-              trying to redfine what Canadians can do with full active controls in our rocket
+              where I lead a team designing <em>Red Robin.</em> This is our biggest project yet where we are
+              trying to redefine what Canadians can do with full active controls in our rocket
             </p>
             <p>
-               I also bring over five years of operations experience in a fast-paced environment, where I learned how to lead under pressure, optimize real-time systems, and keep things running smoothly when challenges arise.
+               I also bring over five years of operations experience in a fast-paced environment, 
+               where I learned how to lead under pressure, optimize real-time systems.
             </p>
-
-            <div className="about__quick">
-              <div className="about__quick-item">
-                <span className="about__quick-label">📍 Location</span>
-                <span>Toronto, Ontario</span>
-              </div>
-              <div className="about__quick-item">
-                <span className="about__quick-label">🎓 Degree</span>
-                <span>B.S. Computer Engineering</span>
-              </div>
-              <div className="about__quick-item">
-                <span className="about__quick-label">Arbalest Club</span>
-                <span>Arbalest Rocketry (President)</span>
-              </div>
-              <div className="about__quick-item">
-                <span className="about__quick-label">📬 Email</span>
-                <a href="mailto:Idoeli2907@gmail.com">Idoeli2907@gmail.com</a>
-              </div>
-            </div>
           </motion.div>
 
           <motion.div
@@ -89,7 +71,7 @@ export default function About() {
             <div className="about__card about__card--orange">
               <div className="about__card-icon">🌐</div>
               <h3>Full-Stack Dev</h3>
-              <p>React, Node.js, Flask, REST APIs — building interfaces that communicate complex info cleanly.</p>
+              <p>React, Node.js, Flask, REST APIs, building interfaces that communicate complex info cleanly.</p>
             </div>
             <div className="about__card about__card--green">
               <div className="about__card-icon">🖥️</div>

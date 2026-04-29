@@ -33,8 +33,8 @@ export default function Contact() {
           </h2>
           <p className="contact__body">
             Whether it's a project collaboration, internship opportunity, or just a conversation about
-            rockets and software, my inbox is open. I'm currently looking for engineering internships
-            and research opportunities for Summer/Fall 2025.
+            rockets, my inbox is always open. Feel free to reach out, I am currently looking for Engineering internships 
+            for the upcoming fall/winter term!
           </p>
 
           <div className="contact__actions">

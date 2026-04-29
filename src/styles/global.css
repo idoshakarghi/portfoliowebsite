@@ -145,3 +145,20 @@ section {
     padding: 72px 20px;
   }
 }
+html {
+  scroll-padding-top: 72px;
+}
+
+section {
+  scroll-margin-top: 72px;
+}
+
+@media (max-width: 1100px) {
+  html {
+    scroll-padding-top: 45px;
+  }
+
+  section {
+    scroll-margin-top: 45px;
+  }
+}

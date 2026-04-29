@@ -17,10 +17,10 @@ const projects = [
     featured: true,
     image: imagePath('portfolioarbalest.png'),
     description:
-      "Designed and implemented the official website for Arbalest Rocketry from scratch. Built with structured HTML/CSS emphasizing maintainable frontend architecture — translating complex aero/avionics technical content into a clean, accessible interface for sponsors, recruits, and the engineering community.",
+      "Designed and implemented the official website for Arbalest Rocketry from scratch. Built with structured HTML/CSS emphasizing maintainable frontend architecture, translating complex aero/avionics technical content into a clean, accessible interface for sponsors, recruits, and the engineering community.",
     highlights: [
       "Responsive design with a focus on presenting complex technical information clearly",
-      "Iterative feature rollout — updated content and layout as the club's work evolved",
+      "Iterative feature rollout, updated content and layout as the club's work evolved",
       "Collaborated with a multidisciplinary team to translate engineering requirements into a stable UI",
       "Emphasis on software maintenance: clean code, documented updates, and scalable architecture",
     ],
@@ -29,7 +29,7 @@ const projects = [
   {
     id: 'Mindly-web',
     title: "Mindly Website",
-    subtitle: "Team Website",
+    subtitle: "Website for client",
     tags: ["HTML/CSS", "JavaScript", "Frontend", "Technical Writing"],
     accent: 'green',
     icon: '🌐',
@@ -44,8 +44,8 @@ const projects = [
       "Collaborated with a multidisciplinary team to translate requirements into a stable UI",
       "Clean code, documented updates, and scalable architecture",
     ],
-    links: {live: 'https://mindlyweb.com/' },
-    placeholder: 'Seedle\nWebsite',
+    links: { live: 'https://mindlyweb.com/' },
+    placeholder: 'mindly\nWebsite',
   },
   {
     id: 'rocket-avionics',
@@ -208,7 +208,21 @@ export default function Projects() {
                       )}
                     </div>
 
-                    <h3 className="project-card__title">{project.title}</h3>
+                    <h3 className="project-card__title">
+                      {project.links.live && project.links.live !== '#' ? (
+                        <a
+                          href={project.links.live}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="project-card__title-link"
+                        >
+                          {project.title}
+                        </a>
+                      ) : (
+                        project.title
+                      )}
+                    </h3>
+
                     <span className="project-card__period">{project.period}</span>
                     <p className="project-card__desc">{project.description}</p>
                   </div>
@@ -228,14 +242,13 @@ export default function Projects() {
 
                     <div className="project-card__links">
                       {project.links.github && project.links.github !== '#' && (
-                        <a href={project.links.github} className="project-card__link" target="_blank" rel="noopener noreferrer">
+                        <a
+                          href={project.links.github}
+                          className="project-card__link"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
                           <GithubSmallIcon /> Code
-                        </a>
-                      )}
-
-                      {project.links.live && project.links.live !== '#' && (
-                        <a href={project.links.live} className="project-card__link project-card__link--live" target="_blank" rel="noopener noreferrer">
-                          <ExternalIcon /> Live
                         </a>
                       )}
                     </div>
@@ -254,14 +267,6 @@ function GithubSmallIcon() {
   return (
     <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24">
       <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.54-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4 11.5 11.5 0 0 1 3 .4c2.29-1.55 3.3-1.23 3.3-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.21.7.82.58C20.56 21.8 24 17.3 24 12 24 5.37 18.63 0 12 0z" />
-    </svg>
-  )
-}
-
-function ExternalIcon() {
-  return (
-    <svg width="12" height="12" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3" />
     </svg>
   )
 }

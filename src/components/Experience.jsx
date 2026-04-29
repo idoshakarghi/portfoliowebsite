@@ -24,9 +24,9 @@ const experiences = [
   accent: 'orange',
   icon: '💻',
   bullets: [
-    'Worked under senior developers in a professional software environment, assisting with application development, debugging, and feature implementation.',
-    'Supported testing, troubleshooting, and maintenance of enterprise software systems to improve reliability and day-to-day performance.',
-    'Collaborated with development teams to document workflows, review changes, and gain hands-on experience across the software development lifecycle.'
+    'Worked under senior developers in a professional software environment, assisting with application development, debugging, and feature implementation',
+    'Supported testing, troubleshooting, and maintenance of enterprise software systems to improve reliability and day-to-day performance',
+    'Collaborated with development teams to document workflows, review changes, and gain hands-on experience across the software development lifecycle'
   ],
 },
 ]
