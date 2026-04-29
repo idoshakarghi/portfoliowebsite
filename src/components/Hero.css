@@ -299,7 +299,7 @@
 
 @media (max-width: 900px) {
   .hero {
-    padding: 52px 32px 24px;
+    padding: 80px 32px 24px;
     min-height: auto;
     justify-content: flex-start;
   }
@@ -347,6 +347,14 @@
 
   .hero__blob--1 { width: 380px; height: 380px; right: -60px; }
   .hero__blob--2 { width: 340px; height: 340px; left: -60px; }
+  .hero__inner {
+  justify-items: center;
+}
+
+.hero__content {
+  align-items: center;
+  text-align: center;
+}
 }
 
 /* ─── Mobile (≤640px) ────────────────────────────────────────────────────── */
