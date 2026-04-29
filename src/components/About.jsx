@@ -51,9 +51,7 @@ export default function About() {
               trying to redfine what Canadians can do with full active controls in our rocket
             </p>
             <p>
-              I also bring over five years of operations experience as a Kitchen Manager at
-              Chipotle. This role has taught me how to lead under pressure, optimize real-time
-              systems, and keep things running smoothly when everything's on fire.
+               I also bring over five years of operations experience in a fast-paced environment, where I learned how to lead under pressure, optimize real-time systems, and keep things running smoothly when challenges arise.
             </p>
 
             <div className="about__quick">
