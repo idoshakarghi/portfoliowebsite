@@ -1,5 +1,3 @@
-/* ─── Base ───────────────────────────────────────────────────────────────── */
-
 .hero {
   min-height: 100vh;
   display: flex;
@@ -7,7 +5,7 @@
   justify-content: center;
   position: relative;
   overflow: hidden;
-  padding: 72px 32px 24px;
+  padding: 70px 32px 20px;
   box-sizing: border-box;
 }
 
@@ -53,7 +51,7 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  font-size: 0.88em;
+  font-size: 0.85em;
 }
 
 .hero__roles {
@@ -80,7 +78,41 @@
   color: var(--text-secondary);
   line-height: 1.65;
   max-width: 520px;
+  margin: 0 0 22px;
+}
+
+.hero__actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
   margin: 0;
+}
+
+.hero__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  gap: 8px;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 14px 28px;
+  border-radius: var(--radius-md);
+  transition: var(--transition);
+  letter-spacing: 0.02em;
+  text-decoration: none;
+}
+
+.hero__btn--primary {
+  background: var(--grad-main);
+  color: #fff;
+  box-shadow: 0 4px 24px rgba(0,210,255,0.25);
+}
+
+.hero__btn--primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(0,210,255,0.35);
 }
 
 .hero__visual {
@@ -156,8 +188,6 @@
   display: none;
 }
 
-/* ─── Blobs ──────────────────────────────────────────────────────────────── */
-
 .hero__blob {
   position: absolute;
   border-radius: 50%;
@@ -190,27 +220,29 @@
   left: 40%;
 }
 
-/* ─── LAPTOP / SMALLER SCREENS ───────────────────────────────────────────── */
-
+/* Laptop / smaller screens */
 @media (max-width: 1100px) {
   .hero {
-    min-height: 100svh;
-    padding: 76px 24px 16px;
+    min-height: auto;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 72px 24px 16px;
   }
 
   .hero__inner {
     max-width: 900px;
-    grid-template-columns: minmax(0, 1fr) 260px;
+    grid-template-columns: minmax(0, 1fr) 240px;
     gap: 28px;
+    align-items: start;
   }
 
   .hero__name {
-    font-size: clamp(2.6rem, 6vw, 4.5rem);
+    font-size: clamp(2.6rem, 5.6vw, 4.4rem);
     line-height: 0.95;
   }
 
   .hero__name-last {
-    font-size: 0.78em;
+    font-size: 0.72em;
   }
 
   .hero__bio {
@@ -220,29 +252,33 @@
   }
 
   .hero__photo-frame {
-    width: 220px;
-    height: 280px;
+    width: 210px;
+    height: 270px;
   }
 
   .hero__stat-card {
     display: none;
   }
+
+  .hero__actions {
+    justify-content: flex-start;
+  }
+
+  .hero__btn {
+    width: auto;
+    max-width: max-content;
+  }
 }
 
-/* ─── TABLET / PHONE ─────────────────────────────────────────────────────── */
-
+/* Phone */
 @media (max-width: 760px) {
   .hero {
-    min-height: auto;
-    padding: 72px 20px 12px;
-    align-items: flex-start;
-    justify-content: flex-start;
+    padding: 68px 20px 12px;
   }
 
   .hero__inner {
     grid-template-columns: 1fr;
     gap: 18px;
-    margin: 0;
   }
 
   .hero__visual {
@@ -262,20 +298,15 @@
   }
 
   .hero__name {
-    font-size: clamp(2.2rem, 11vw, 3.5rem);
-    line-height: 0.95;
+    font-size: clamp(2.2rem, 10vw, 3.3rem);
   }
 
   .hero__name-last {
-    font-size: 0.72em;
+    font-size: 0.7em;
   }
 
-  .hero__roles {
-    margin-bottom: 16px;
-  }
-
-  .hero__bio {
-    max-width: 100%;
+  .hero__btn {
+    width: auto;
   }
 
   .hero__blob--1 {
