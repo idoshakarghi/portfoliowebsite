@@ -25,7 +25,7 @@
 .hero__blob--1 {
   width: 600px;
   height: 600px;
- 
+  background: radial-gradient(circle, rgba(0,210,255,0.07) 0%, transparent 70%);
   top: -100px;
   right: -100px;
   animation: blobFloat 8s ease-in-out infinite alternate;
@@ -34,6 +34,7 @@
 .hero__blob--2 {
   width: 500px;
   height: 500px;
+  background: radial-gradient(circle, rgba(58,123,213,0.08) 0%, transparent 70%);
   bottom: 0;
   left: -150px;
   animation: blobFloat 10s ease-in-out infinite alternate-reverse;
@@ -42,7 +43,7 @@
 .hero__blob--3 {
   width: 300px;
   height: 300px;
-  
+  background: radial-gradient(circle, rgba(255,107,53,0.05) 0%, transparent 70%);
   top: 40%;
   left: 40%;
   animation: blobFloat 12s ease-in-out infinite alternate;
@@ -67,7 +68,7 @@
   align-items: center;
 }
 
-/* ─── Content (left col on desktop) ─────────────────────────────────────── */
+/* ─── Content ────────────────────────────────────────────────────────────── */
 
 .hero__content {
   display: flex;
@@ -189,11 +190,9 @@
   text-decoration: none;
 }
 
-.hero__social-link:hover {
-  color: var(--accent-cyan);
-}
+.hero__social-link:hover { color: var(--accent-cyan); }
 
-/* ─── Visual (right col on desktop) ─────────────────────────────────────── */
+/* ─── Visual ─────────────────────────────────────────────────────────────── */
 
 .hero__visual {
   position: relative;
@@ -219,12 +218,6 @@
   object-fit: cover;
   object-position: center top;
   display: block;
-}
-
-.hero__photo-glow {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
 }
 
 /* ─── Stat cards ─────────────────────────────────────────────────────────── */
@@ -302,9 +295,9 @@
 
 .hero__scroll:hover { color: var(--accent-cyan); }
 
-/* ─── Small laptops (≤1100px) ────────────────────────────────────────────── */
+/* ─── Collapsed layout (≤1300px) — single column, fully centered ─────────── */
 
-@media (max-width: 1100px) {
+@media (max-width: 1300px) {
   .hero {
     padding: 52px 32px 24px;
     min-height: auto;
@@ -312,30 +305,30 @@
   }
 
   .hero__inner {
-    grid-template-columns: 1fr;   /* single column */
+    grid-template-columns: 1fr;
     gap: 28px;
+    justify-items: center;   /* centers both columns */
   }
 
-  /* Photo goes on top */
+  /* Photo on top */
   .hero__visual {
     order: -1;
-    justify-content: center;
     width: 100%;
+    justify-content: center;
   }
 
-  /* Shrink photo a bit */
   .hero__photo-frame {
     width: 200px;
     height: 260px;
     border-radius: 20px;
   }
 
-  /* Hide floating stat cards — they overflow at this width */
+  /* Hide stat cards */
   .hero__stat-card { display: none; }
 
-  /* Center ALL text content */
+  /* Center all text */
   .hero__content {
-    align-items: center;   /* ← this is the key line */
+    align-items: center;
     text-align: center;
     width: 100%;
   }
@@ -352,7 +345,6 @@
     max-width: 600px;
   }
 
-  /* Trim blobs so they don't cause side overflow */
   .hero__blob--1 { width: 380px; height: 380px; right: -60px; }
   .hero__blob--2 { width: 340px; height: 340px; left: -60px; }
 }
