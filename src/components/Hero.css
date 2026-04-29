@@ -1,30 +1,12 @@
 .hero {
-  min-height: auto;      /* remove full screen height */
-  height: auto;
-  padding: 90px 32px 20px; /* reduce bottom padding hard */
-}
-
-.hero__inner {
-  gap: 30px; /* tighter spacing inside */
-}
-
-.hero__bio {
-  margin-bottom: 20px;
-}
-
-.hero__actions {
-  margin-bottom: 0;
-}
-
-@media (max-width: 768px) {
-  .hero {
-    min-height: auto;
-    padding: 95px 20px 10px;
-  }
-
-  .hero__inner {
-    gap: 18px;
-  }
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding: 100px 32px 60px;
 }
 
 /* Ambient blobs */
@@ -97,9 +79,9 @@
 
 .hero__name {
   font-family: var(--font-display);
-  font-size: clamp(2.8rem, 7vw, 6rem);
+  font-size: clamp(3.5rem, 9vw, 7rem);
   font-weight: 800;
-  line-height: 0.95;
+  line-height: 0.92;
   letter-spacing: -0.03em;
   color: var(--text-primary);
   margin-bottom: 20px;
@@ -365,36 +347,10 @@
 @media (max-width: 900px) {
   .hero__inner {
     grid-template-columns: 1fr;
-    text-align: center;   /* change from left to center */
-    gap: 28px;
-    justify-items: center; /* centers grid children */
-  }
-
-  .hero__greeting,
-  .hero__roles,
-  .hero__actions,
-  .hero__socials {
-    justify-content: center;
-  }
-
-  .hero__bio {
-    max-width: 100%;
-    margin-left: auto;
-    margin-right: auto;
+    text-align: left;
   }
 
   .hero__visual {
-    display: flex;
-    order: -1;
-    justify-content: center;
-  }
-
-  .hero__photo-frame {
-    width: 220px;
-    height: 280px;
-  }
-
-  .hero__stat-card {
     display: none;
   }
 }
@@ -433,34 +389,43 @@
   pointer-events: none;
   box-shadow: inset 0 0 80px rgba(0,210,255,0.08);
 }
-@media (max-width: 1280px) {
-  .hero__inner {
-    max-width: 950px;
-    grid-template-columns: 1fr 320px;
-    gap: 36px;
-  }
 
-  .hero__name {
-    font-size: clamp(3rem, 7vw, 5.2rem);
-  }
-
-  .hero__photo-frame {
-    width: 280px;
-    height: 350px;
-  }
-
-  .hero__bio {
-    max-width: 480px;
-  }
-}
 
 /* Replace the existing @media (max-width: 900px) and @media (max-width: 480px) blocks with these: */
 
-@media (max-width: 900px) {
+/* REPLACE your current smaller-screen media queries with this */
+
+@media (max-width: 1100px) {
+  .hero {
+    min-height: 100vh;
+    padding: 140px 28px 50px; /* more room at top when entering */
+    justify-content: flex-start;
+  }
+
   .hero__inner {
     grid-template-columns: 1fr;
-    text-align: left;
-    gap: 28px;
+    gap: 26px;
+    text-align: center;
+    justify-items: center;
+    align-content: start;
+  }
+
+  .hero__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero__greeting,
+  .hero__roles {
+    justify-content: center;
+  }
+
+  .hero__bio {
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
   }
 
   .hero__visual {
@@ -470,12 +435,31 @@
   }
 
   .hero__photo-frame {
-    width: 220px;
-    height: 280px;
+    width: 240px;
+    height: 300px;
   }
 
   .hero__stat-card {
     display: none;
+  }
+
+  .hero__scroll {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 125px 20px 30px;
+  }
+
+  .hero__name {
+    font-size: clamp(2.8rem, 13vw, 5rem);
+  }
+
+  .hero__photo-frame {
+    width: 210px;
+    height: 270px;
   }
 }
 
