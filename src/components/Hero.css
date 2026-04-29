@@ -1,11 +1,11 @@
 .hero {
-  min-height: 100vh;
+  min-height: auto;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   position: relative;
   overflow: hidden;
-  padding: 70px 32px 20px;
+  padding: 95px 32px 20px;
   box-sizing: border-box;
 }
 
@@ -38,9 +38,9 @@
 
 .hero__name {
   font-family: var(--font-display);
-  font-size: clamp(3rem, 7vw, 6rem);
+  font-size: clamp(2.8rem, 6.2vw, 5.4rem);
   font-weight: 800;
-  line-height: 0.92;
+  line-height: 0.94;
   letter-spacing: -0.03em;
   color: var(--text-primary);
   margin: 0 0 18px;
@@ -51,7 +51,7 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  font-size: 0.85em;
+  font-size: 0.9em;
 }
 
 .hero__roles {
@@ -86,6 +86,7 @@
   gap: 16px;
   flex-wrap: wrap;
   margin: 0;
+  justify-content: flex-start;
 }
 
 .hero__btn {
@@ -93,6 +94,7 @@
   align-items: center;
   justify-content: center;
   width: auto;
+  max-width: max-content;
   gap: 8px;
   font-family: var(--font-body);
   font-size: 0.85rem;
@@ -220,29 +222,25 @@
   left: 40%;
 }
 
-/* Laptop / smaller screens */
+/* smaller laptops */
 @media (max-width: 1100px) {
   .hero {
-    min-height: auto;
-    align-items: flex-start;
-    justify-content: flex-start;
-    padding: 72px 24px 16px;
+    padding: 85px 24px 16px;
   }
 
   .hero__inner {
-    max-width: 900px;
-    grid-template-columns: minmax(0, 1fr) 240px;
-    gap: 28px;
+    grid-template-columns: minmax(0, 1fr) 230px;
+    gap: 26px;
     align-items: start;
   }
 
   .hero__name {
-    font-size: clamp(2.6rem, 5.6vw, 4.4rem);
+    font-size: clamp(2.25rem, 4.8vw, 3.8rem);
     line-height: 0.95;
   }
 
   .hero__name-last {
-    font-size: 0.72em;
+    font-size: 0.88em;
   }
 
   .hero__bio {
@@ -252,33 +250,25 @@
   }
 
   .hero__photo-frame {
-    width: 210px;
-    height: 270px;
+    width: 200px;
+    height: 255px;
   }
 
   .hero__stat-card {
     display: none;
   }
-
-  .hero__actions {
-    justify-content: flex-start;
-  }
-
-  .hero__btn {
-    width: auto;
-    max-width: max-content;
-  }
 }
 
-/* Phone */
+/* phones/tablets */
 @media (max-width: 760px) {
   .hero {
-    padding: 68px 20px 12px;
+    padding: 78px 20px 12px;
   }
 
   .hero__inner {
     grid-template-columns: 1fr;
     gap: 18px;
+    margin: 0;
   }
 
   .hero__visual {
@@ -298,15 +288,25 @@
   }
 
   .hero__name {
-    font-size: clamp(2.2rem, 10vw, 3.3rem);
+    font-size: clamp(2.05rem, 9vw, 3.1rem);
+    line-height: 0.96;
   }
 
   .hero__name-last {
-    font-size: 0.7em;
+    font-size: 0.86em;
+  }
+
+  .hero__roles {
+    margin-bottom: 16px;
+  }
+
+  .hero__bio {
+    max-width: 100%;
   }
 
   .hero__btn {
     width: auto;
+    max-width: max-content;
   }
 
   .hero__blob--1 {
