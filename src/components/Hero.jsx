@@ -51,7 +51,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.65, duration: 0.6 }}
           >
-            an Engineering student at York University building systems because I want to push limitgs.
+            An Engineering student at York University building systems because I want to push limits.
             From leading a team to do active-control rockets to embedded avionics and self-hosted infrastructure.
             I write code and wire hardware with the same obsession.
           </motion.p>
@@ -126,9 +126,9 @@ export default function Hero() {
           <div className="hero__stat-card hero__stat-card--2">
             <span className="hero__stat-value">🚀</span>
             <span className="hero__stat-label">Arbalest President</span>
-          </div>
+          </div> 
           <div className="hero__stat-card hero__stat-card--3">
-            <span className="hero__stat-value">3+</span>
+            <span className="hero__stat-value">3+ years</span>
             <span className="hero__stat-label">Frontend Dev</span>
           </div>
         </motion.div>
