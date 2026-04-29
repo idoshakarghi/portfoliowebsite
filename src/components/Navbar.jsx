@@ -26,7 +26,7 @@ export default function Navbar() {
     const section = document.querySelector(href)
     if (!section) return
 
-    const navbarOffset = 90
+    const navbarOffset = 70
 
     const y =
       section.getBoundingClientRect().top +
