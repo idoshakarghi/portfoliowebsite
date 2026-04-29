@@ -89,7 +89,7 @@ export default function Hero() {
               GitHub
             </a>
             <a
-              href="https://linkedin.com/in/ido-shakarghi"
+              href="https://www.linkedin.com/in/ido-shakarghi-8b8213343/"
               target="_blank"
               rel="noopener noreferrer"
               className="hero__social-link"
