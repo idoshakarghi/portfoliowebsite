@@ -20,6 +20,27 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
+  const handleNavClick = (e, href) => {
+    e.preventDefault()
+
+    const section = document.querySelector(href)
+    if (!section) return
+
+    const navbarOffset = 90
+
+    const y =
+      section.getBoundingClientRect().top +
+      window.pageYOffset -
+      navbarOffset
+
+    window.scrollTo({
+      top: y,
+      behavior: 'smooth',
+    })
+
+    setMenuOpen(false)
+  }
+
   return (
     <motion.nav
       className={`navbar ${scrolled ? 'navbar--scrolled' : ''} ${menuOpen ? 'navbar--open' : ''}`}
@@ -28,7 +49,11 @@ export default function Navbar() {
       transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
     >
       <div className="navbar__inner">
-        <a href="#hero" className="navbar__logo">
+        <a
+          href="#hero"
+          className="navbar__logo"
+          onClick={(e) => handleNavClick(e, '#hero')}
+        >
           <span className="navbar__logo-bracket">&lt;</span>
           Ido
           <span className="navbar__logo-bracket">/&gt;</span>
@@ -42,7 +67,11 @@ export default function Navbar() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 + i * 0.06 }}
             >
-              <a href={link.href} className="navbar__link">
+              <a
+                href={link.href}
+                className="navbar__link"
+                onClick={(e) => handleNavClick(e, link.href)}
+              >
                 <span className="navbar__link-num">0{i + 1}.</span>
                 {link.label}
               </a>
@@ -50,10 +79,7 @@ export default function Navbar() {
           ))}
 
           <li>
-            <a
-              href="mailto:Idoeli2907@gmail.com"
-              className="navbar__cta"
-            >
+            <a href="mailto:Idoeli2907@gmail.com" className="navbar__cta">
               Hire Me
             </a>
           </li>
@@ -64,7 +90,9 @@ export default function Navbar() {
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
         >
-          <span /><span /><span />
+          <span />
+          <span />
+          <span />
         </button>
       </div>
 
@@ -82,7 +110,7 @@ export default function Navbar() {
                 key={link.href}
                 href={link.href}
                 className="navbar__mobile-link"
-                onClick={() => setMenuOpen(false)}
+                onClick={(e) => handleNavClick(e, link.href)}
               >
                 {link.label}
               </a>
@@ -92,6 +120,7 @@ export default function Navbar() {
               href="mailto:Idoeli2907@gmail.com"
               className="navbar__cta"
               style={{ alignSelf: 'flex-start' }}
+              onClick={() => setMenuOpen(false)}
             >
               Hire Me
             </a>
