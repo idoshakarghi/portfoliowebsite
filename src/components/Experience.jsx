@@ -19,7 +19,7 @@ const experiences = [
   role: 'Software Development Intern',
   org: 'Magic Software Enterprises',
   location: 'Israel',
-  period: 'May 2024 – Aug 2024',
+  period: 'May 2024 – Present',
   type: 'Software Engineering',
   accent: 'orange',
   icon: '💻',
